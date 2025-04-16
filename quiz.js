@@ -165,6 +165,7 @@ const quizData = [
 
 const radioBtn = document.querySelectorAll('input');
 const scoreContainer = document.getElementsByClassName('score-container')[0];
+const quizContainer = document.getElementsByClassName('quiz-container')[0];
 const questionEl = document.getElementById("question")
 const a_text = document.getElementById("a_text")
 const b_text = document.getElementById("b_text")
@@ -221,8 +222,10 @@ submitBtn.addEventListener('click',
      else{
           let userScore = document.getElementsByClassName("actual-score")[0]
           let totalscore = (score * 5);
-          scoreContainer.style.display = ""
-         
+          quizContainer.style.display = "none"
+          scoreContainer.style.display = "block"
+          userScore = totalscore;
+
           }   
      }
 )
