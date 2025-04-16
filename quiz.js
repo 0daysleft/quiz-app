@@ -63,7 +63,6 @@ const quizData = [
         d: "--",
         correct: 'a'
     },
-    /*
     {
         question: "Which array method removes the last element from an array?",
         a: "shift()",
@@ -160,7 +159,7 @@ const quizData = [
         d: "object",
         correct: 'c'
     }
-*/
+
 ];
 
 const radioBtn = document.querySelectorAll('input');
