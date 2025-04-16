@@ -247,7 +247,7 @@ submitBtn.addEventListener('click',
      else{
           showResults()
           }   
-          */
+      */
      }
           
 )
