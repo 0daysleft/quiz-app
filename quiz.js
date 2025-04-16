@@ -226,8 +226,16 @@ submitBtn.addEventListener('click',
 )
 
 function showResults(){
+          let congrats = document.getElementsByClassName("congrats")[0];
+          let overalPeopelpPrcentage = document.getElementsByClassName("people-percentage")[0];
           let userScore = document.getElementsByClassName("actual-score")[0]
           let totalscore = (score * (100 / quizData.length));
+
+          if(totalscore >= '80'){
+               congrats.textContent = "Exellent"
+               overalPeopelpPrcentage.textContent = '87%'
+          }
+
           quizContainer.style.display = "none"
           scoreContainer.style.display = "flex"
           userScore.innerHTML = totalscore;
