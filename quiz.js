@@ -199,8 +199,9 @@ submitBtn.addEventListener('click',
           currentQuestion++;
 
           if(currentQuestion <= quizData.length){
-
+               console.log(currentQuestion)
                loadQuiz();
+
           }
           else{
                alert("Done")
