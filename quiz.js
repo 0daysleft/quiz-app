@@ -222,12 +222,7 @@ submitBtn.addEventListener('click',
      }
      else{
                console.log("Total Score: "  + score + '/' + quizData.length)
-          } 
-
-           
-          
-          
-           
+          }   
      }
 )
 
