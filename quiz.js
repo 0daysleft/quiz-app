@@ -224,7 +224,7 @@ submitBtn.addEventListener('click',
           quizContainer.style.textAlign = 'center';
           quizContainer.style.backgroundColor = 'magenta';
           quizContainer.innerHTML = `
-               Total Score:${score}/${quizData.length}
+               Total Score:${score * 5}
                `
           }   
      }
