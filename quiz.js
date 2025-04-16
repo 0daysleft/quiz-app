@@ -177,13 +177,20 @@ let score = 0;
 
 let currentQuestion = 0;
 let currentQuizData = undefined;
-loadQuiz();
 
 function uncheck(){
      radioBtn.forEach(
           (radio) => radio.checked = false
      )
 }
+
+
+document.getElementsByClassName('start-quiz-note')[0].onclick = function (){
+     quizContainer.style.display = "inline"
+     loadQuiz();
+     document.getElementsByClassName('start-quiz-note')[0].style.display = "none";
+}
+
 
 function loadQuiz(){
      currentQuizData = quizData[currentQuestion];
