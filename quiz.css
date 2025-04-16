@@ -20,11 +20,21 @@ body{
      width: 600px;
      max-width: 100%;
      overflow: hidden;
+     position: relative;
      display: none;
 }
 
 .quiz-header{
      padding: 4rem;
+}
+
+.quiz-header #quizNumber{
+     position: absolute;
+     top: 0;
+     right: 0;
+     font-weight: bolder;
+     font-size: 1.5rem;
+     padding: 1.2rem;
 }
 
 h2{
