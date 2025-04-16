@@ -202,31 +202,31 @@ submitBtn.addEventListener('click',
           
           radioBtn.forEach(
                (radio) => {
-                    // console.log(radio.checked ? true +"Radio Id: " + radio.id : "")
                     
                     if(!radio.checked)return
                          else{ 
                               if(currentQuestion <= quizData.length){
-                                   
-                                   quizNumber.innerHTML = currentQuestion;
+                                     
+                                   //quizNumber.innerHTML = currentQuestion;
                                    if(radio.checked){
-                                        // if(radio.id === currentQuizData.correct){
+                                         if(radio.id === currentQuizData.correct){
                                              score++
-                                             console.log(radio.id)
-                                             console.log("quiz: " + currentQuizData.correct)
-                                             // }
+                                             console.log(score)
+                                             }
+
                                         }
-                                        console.log(currentQuestion)
                                         
-                                        }
-                                        else{
-                                             console.log("Total Score: "  + score)
-                                        }  
+                              }
+                              else{
+                                   console.log("Total Score: "  + score)
+                              }  
                          }
                          
                     }
 
-          )   
+          ) 
+          currentQuestion++;
+          loadQuiz()   
      }
 )
 
