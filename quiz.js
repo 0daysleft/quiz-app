@@ -208,21 +208,27 @@ submitBtn.addEventListener('click',
 
           currentQuestion++;
 
-          if(currentQuestion <= quizData.length){
-               console.log(currentQuestion)
-
+         
                radioBtn.forEach(
                     (radio) => {
-                         console.log(radio.checked ? true +" " + radio : "none")
-                    }
-               )
+                         console.log(radio.checked ? true +"Radio Id: " + radio.id : "none")
 
-               loadQuiz();
-
-          }
+                         if(!radio.checked) return
+                         else{ 
+                               if(currentQuestion <= quizData.length){
+               console.log(currentQuestion)
+ }
           else{
                alert("Done")
           }
+                              
+                              loadQuiz()
+                         }
+                    }
+               )
+
+
+         
      }
 )
 
