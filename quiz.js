@@ -187,8 +187,9 @@ function uncheck(){
 
 document.getElementsByClassName('start-quiz-note')[0].onclick = function (){
      quizContainer.style.display = "inline"
-     loadQuiz();
      document.getElementsByClassName('start-quiz-note')[0].style.display = "none";
+     loadQuiz()
+     startQuiz()
 }
 
 
@@ -211,6 +212,7 @@ function loadQuiz(){
      d_text.innerText = currentQuizData.d;
 }
 
+function startQuiz(){
 submitBtn.addEventListener('click', 
      () => {
 
@@ -243,7 +245,7 @@ submitBtn.addEventListener('click',
           }   
      }
 )
-
+}
 document.getElementsByClassName("restart")[0].addEventListener('click', () => {
      window.location.reload();
 })
