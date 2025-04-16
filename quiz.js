@@ -38,7 +38,8 @@ const quizData = [
         c: "const",
         d: "static",
         correct: 'c'
-    },
+    }
+    /*,
     {
         question: "Which of the following is a JavaScript data type?",
         a: "Float",
@@ -58,7 +59,7 @@ const quizData = [
     {
         question: "Which symbol is used for single-line comments in JavaScript?",
         a: "//",
-        b: "/* */",
+        b: "/* */ /*",
         c: "#",
         d: "--",
         correct: 'a'
@@ -159,6 +160,7 @@ const quizData = [
         d: "object",
         correct: 'c'
     }
+        */
 ];
 
 const radioBtn = document.querySelectorAll('input');
@@ -173,7 +175,7 @@ let quizNumber = document.getElementById('quizNumber');
 let score = 0;
 
 let currentQuestion = 0;
-const currentQuizData = quizData[currentQuestion];
+let currentQuizData = undefined;
 loadQuiz();
 
 function uncheck(){
@@ -183,7 +185,7 @@ function uncheck(){
 }
 
 function loadQuiz(){
-     const currentQuizData = quizData[currentQuestion];
+     currentQuizData = quizData[currentQuestion];
      uncheck();
 
      questionEl.innerText = currentQuizData.question;
@@ -192,39 +194,38 @@ function loadQuiz(){
      b_text.innerText = currentQuizData.b;
      c_text.innerText = currentQuizData.c;
      d_text.innerText = currentQuizData.d;
-
-     
 }
 
 submitBtn.addEventListener('click', 
      () => {
 
+         
+     if(currentQuestion <= quizData.length){
+         
           
           radioBtn.forEach(
                (radio) => {
                     
                     if(!radio.checked)return
                          else{ 
-                              if(currentQuestion <= quizData.length){
-                                     
-                                   //quizNumber.innerHTML = currentQuestion;
+                                   quizNumber.innerHTML = ((currentQuestion + 1) + '/' + (quizData.length + 1));
                                    if(radio.checked){
-                                         if(radio.id === currentQuizData.correct){
-                                             return score++
-                                             }
-
+                                        radio.id === currentQuizData.correct ? score++ : score
+                                             console.log('Your Choice: ' + radio.id + "\nCorrect Answer: " + currentQuizData.correct)
+                                             console.log('Quiz: ' + currentQuizData.question + "\nAns: " + currentQuizData.correct + "==> " + currentQuizData[currentQuizData.correct])
                                         }
-                                   currentQuestion++;
-                                   loadQuiz()    
-                              }
-                              else{
-                                   console.log("Total Score: "  + score)
-                              }  
-                         }
-                         
+                                        loadQuiz()
+                                         currentQuestion++;
+                                   }              
                     }
 
-          ) 
+               )   
+          
+           }
+           
+          else{
+               console.log("Total Score: "  + score + '/' + quizData.length)
+          } 
            
      }
 )
