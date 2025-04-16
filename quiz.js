@@ -223,33 +223,7 @@ submitBtn.addEventListener('click',
      currentQuestion++;
      quizNumber.innerHTML = ((currentQuestion + 1) + '/' + quizData.length);
      loadQuiz();
-
-
-/*
-     if(currentQuestion <= quizData.length){
-         
-           radioBtn.forEach(
-               (radio) => {
-                    if(!radio.checked)return
-                         else{ 
-                                  
-                                   if(radio.checked){
-                                        radio.id === currentQuizData.correct ? score++ : score
-                                        loadQuiz()
-                                        currentQuestion++;
-                                        }
-                                        
-                                   }              
-                    }
-
-               )  
-     }
-     else{
-          showResults()
-          }   
-      */
-     }
-          
+     }        
 )
 
 function showResults(){
