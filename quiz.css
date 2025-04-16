@@ -89,7 +89,7 @@ button:hover{
      display: flex;
      justify-content: space-between;
      flex-direction: column;
-     background-color: red;
+     background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
      border-radius: 100%;
 }
 
