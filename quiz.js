@@ -161,6 +161,8 @@ const quizData = [
     }
 ];
 
+const radioBtn = document.querySelectorAll('input');
+
 const questionEl = document.getElementById("question")
 const a_text = document.getElementById("a_text")
 const b_text = document.getElementById("b_text")
@@ -172,8 +174,15 @@ let currentQuestion = 0;
 
 loadQuiz();
 
+function uncheck(){
+     radioBtn.forEach(
+          (radio) => radio.checked = false
+     )
+}
+
 function loadQuiz(){
 
+     uncheck();
      const currentQuizData = quizData[currentQuestion];
 
      questionEl.innerText = currentQuizData.question;
