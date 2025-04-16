@@ -209,27 +209,25 @@ submitBtn.addEventListener('click',
 
           currentQuestion++;
 
-         
-               radioBtn.forEach(
+          radioBtn.forEach(
                     (radio) => {
-                         console.log(radio.checked ? true +"Radio Id: " + radio.id : "none")
+                         console.log(radio.checked ? true +"Radio Id: " + radio.id : "")
 
                          if(!radio.checked) return
                          else{ 
                                if(currentQuestion <= quizData.length){
-               console.log(currentQuestion)
- }
-          else{
-               alert("Done")
-          }
-                              
+                                        let quizNumber = document.getElementById('quizNumber');
+                                        quizNumber.innerHTML = currentQuestion;
+
+                                        
+                                   }
+                                   else{
+                                        alert("Done")
+                                   }  
                               loadQuiz()
                          }
                     }
-               )
-
-
-         
+          )   
      }
 )
 
