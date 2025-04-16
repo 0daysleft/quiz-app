@@ -183,7 +183,7 @@ function uncheck(){
 }
 
 function loadQuiz(){
-
+     const currentQuizData = quizData[currentQuestion];
      uncheck();
 
      questionEl.innerText = currentQuizData.question;
@@ -210,12 +210,12 @@ submitBtn.addEventListener('click',
                                    //quizNumber.innerHTML = currentQuestion;
                                    if(radio.checked){
                                          if(radio.id === currentQuizData.correct){
-                                             score++
-                                             console.log(score)
+                                             return score++
                                              }
 
                                         }
-                                        
+                                   currentQuestion++;
+                                   loadQuiz()    
                               }
                               else{
                                    console.log("Total Score: "  + score)
@@ -225,8 +225,7 @@ submitBtn.addEventListener('click',
                     }
 
           ) 
-          currentQuestion++;
-          loadQuiz()   
+           
      }
 )
 
