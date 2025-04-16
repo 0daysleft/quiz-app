@@ -230,3 +230,6 @@ submitBtn.addEventListener('click',
      }
 )
 
+document.getElementsByClassName("restart")[0].addEventListener('click', () => {
+     window.location.reload();
+})
