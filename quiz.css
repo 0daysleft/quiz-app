@@ -20,6 +20,7 @@ body{
      width: 600px;
      max-width: 100%;
      overflow: hidden;
+     display: none;
 }
 
 .quiz-header{
