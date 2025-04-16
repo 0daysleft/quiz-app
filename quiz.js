@@ -194,7 +194,14 @@ document.getElementsByClassName('start-quiz-note')[0].onclick = function (){
 
 function loadQuiz(){
      currentQuizData = quizData[currentQuestion];
+
+     if (currentQuestion >= quizData.length) {
+        showResults();
+        return;
+     }
+
      uncheck();
+
 
      questionEl.innerText = currentQuizData.question;
 
