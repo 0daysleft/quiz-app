@@ -169,10 +169,11 @@ const b_text = document.getElementById("b_text")
 const c_text = document.getElementById("c_text")
 const d_text = document.getElementById("d_text")
 const submitBtn = document.querySelector('button');
+let quizNumber = document.getElementById('quizNumber');
 let score = 0;
 
 let currentQuestion = 0;
-
+const currentQuizData = quizData[currentQuestion];
 loadQuiz();
 
 function uncheck(){
@@ -184,7 +185,6 @@ function uncheck(){
 function loadQuiz(){
 
      uncheck();
-     const currentQuizData = quizData[currentQuestion];
 
      questionEl.innerText = currentQuizData.question;
 
@@ -196,39 +196,36 @@ function loadQuiz(){
      
 }
 
-let ans = document.querySelector('li');
-
-ans.addEventListener('click', 
-     () => {
-          
-     }
-)
-
 submitBtn.addEventListener('click', 
      () => {
 
-          currentQuestion++;
-
+          
           radioBtn.forEach(
-                    (radio) => {
-                        // console.log(radio.checked ? true +"Radio Id: " + radio.id : "")
-
-                         if(!radio.checked) return
+               (radio) => {
+                    // console.log(radio.checked ? true +"Radio Id: " + radio.id : "")
+                    
+                    if(!radio.checked)return
                          else{ 
-                               if(currentQuestion <= quizData.length){
-                                        let quizNumber = document.getElementById('quizNumber');
-                                        quizNumber.innerHTML = currentQuestion;
-
-                                        if(radio.checked.id === currentQuizData.correct){
+                              if(currentQuestion <= quizData.length){
+                                   
+                                   quizNumber.innerHTML = currentQuestion;
+                                   if(radio.checked){
+                                        // if(radio.id === currentQuizData.correct){
                                              score++
+                                             console.log(radio.id)
+                                             console.log("quiz: " + currentQuizData.correct)
+                                             // }
                                         }
-                                   }
-                                   else{
-                                        console.log("Total Score: "  + score)
-                                   }  
-                              loadQuiz()
+                                        console.log(currentQuestion)
+                                        
+                                        }
+                                        else{
+                                             console.log("Total Score: "  + score)
+                                        }  
                          }
+                         
                     }
+
           )   
      }
 )
