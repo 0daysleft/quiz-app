@@ -221,10 +221,10 @@ submitBtn.addEventListener('click',
      }
      else{
           let userScore = document.getElementsByClassName("actual-score")[0]
-          let totalscore = (score * 5);
+          let totalscore = (score * (100 / quizData.length));
           quizContainer.style.display = "none"
-          scoreContainer.style.display = "block"
-          userScore = totalscore;
+          scoreContainer.style.display = "flex"
+          userScore.innerHTML = totalscore;
 
           }   
      }
