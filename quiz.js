@@ -188,6 +188,7 @@ function uncheck(){
 document.getElementsByClassName('start-quiz-note')[0].onclick = function (){
      quizContainer.style.display = "inline"
      document.getElementsByClassName('start-quiz-note')[0].style.display = "none";
+     quizNumber.innerHTML = ((currentQuestion + 1) + '/' + quizData.length);
      loadQuiz();
 }
 
@@ -202,7 +203,6 @@ function loadQuiz(){
 
      uncheck();
 
-
      questionEl.innerText = currentQuizData.question;
 
      a_text.innerText = currentQuizData.a;
@@ -213,15 +213,26 @@ function loadQuiz(){
 
 submitBtn.addEventListener('click', 
      () => {
+     const selected = [...radioBtn].find(radio => radio.checked);
+     if (!selected) return;
 
-        
+     if (selected.id === currentQuizData.correct) {
+          score++;
+     }
+
+     currentQuestion++;
+     quizNumber.innerHTML = ((currentQuestion + 1) + '/' + quizData.length);
+     loadQuiz();
+
+
+/*
      if(currentQuestion <= quizData.length){
          
            radioBtn.forEach(
                (radio) => {
                     if(!radio.checked)return
                          else{ 
-                                   quizNumber.innerHTML = ((currentQuestion + 1) + '/' + quizData.length);
+                                  
                                    if(radio.checked){
                                         radio.id === currentQuizData.correct ? score++ : score
                                         loadQuiz()
@@ -236,7 +247,9 @@ submitBtn.addEventListener('click',
      else{
           showResults()
           }   
+          */
      }
+          
 )
 
 function showResults(){
