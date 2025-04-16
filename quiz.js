@@ -175,7 +175,7 @@ const submitBtn = document.querySelector('.quiz-button');
 let quizNumber = document.getElementById('quizNumber');
 let score = 0;
 
-let currentQuestion = 0;
+let currentQuestion = 1;
 let currentQuizData = undefined;
 
 function uncheck(){
