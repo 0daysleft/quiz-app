@@ -164,7 +164,7 @@ const quizData = [
 ];
 
 const radioBtn = document.querySelectorAll('input');
-
+const quizContainer = document.getElementsByClassName('quiz-container')[0];
 const questionEl = document.getElementById("question")
 const a_text = document.getElementById("a_text")
 const b_text = document.getElementById("b_text")
@@ -221,7 +221,13 @@ submitBtn.addEventListener('click',
                )  
      }
      else{
-               console.log("Total Score: "  + score + '/' + quizData.length)
+          quizContainer.style.padding = '2rem';
+          quizContainer.style.fontSize = '2rem';
+          quizContainer.style.textAlign = 'center';
+          quizContainer.style.backgroundColor = 'magenta';
+          quizContainer.innerHTML = `
+               Total Score:${score}/${quizData.length}
+               `
           }   
      }
 )
