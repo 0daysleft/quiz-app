@@ -215,13 +215,13 @@ submitBtn.addEventListener('click',
      () => {
 
         
-     if(currentQuestion <= (quizData.length - 1)){
+     if(currentQuestion <= quizData.length){
          
            radioBtn.forEach(
                (radio) => {
                     if(!radio.checked)return
                          else{ 
-                                   quizNumber.innerHTML = ((currentQuestion + 1) + '/' + (quizData.length + 1));
+                                   quizNumber.innerHTML = ((currentQuestion + 1) + '/' + quizData.length);
                                    if(radio.checked){
                                         radio.id === currentQuizData.correct ? score++ : score
                                         loadQuiz()
@@ -234,15 +234,18 @@ submitBtn.addEventListener('click',
                )  
      }
      else{
+          showResults()
+          }   
+     }
+)
+
+function showResults(){
           let userScore = document.getElementsByClassName("actual-score")[0]
           let totalscore = (score * (100 / quizData.length));
           quizContainer.style.display = "none"
           scoreContainer.style.display = "flex"
           userScore.innerHTML = totalscore;
-
-          }   
-     }
-)
+}
 
 document.getElementsByClassName("restart")[0].addEventListener('click', () => {
      window.location.reload();
