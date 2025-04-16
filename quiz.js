@@ -199,13 +199,8 @@ function loadQuiz(){
 submitBtn.addEventListener('click', 
      () => {
 
-         
-     if(currentQuestion <= quizData.length){
-         
-          
-          radioBtn.forEach(
+         radioBtn.forEach(
                (radio) => {
-                    
                     if(!radio.checked)return
                          else{ 
                                    quizNumber.innerHTML = ((currentQuestion + 1) + '/' + (quizData.length + 1));
@@ -214,18 +209,23 @@ submitBtn.addEventListener('click',
                                              console.log('Your Choice: ' + radio.id + "\nCorrect Answer: " + currentQuizData.correct)
                                              console.log('Quiz: ' + currentQuizData.question + "\nAns: " + currentQuizData.correct + "==> " + currentQuizData[currentQuizData.correct])
                                         }
-                                        loadQuiz()
-                                         currentQuestion++;
+                                        
                                    }              
                     }
 
-               )   
-          
-           }
-           
-          else{
+               )  
+     if(currentQuestion <= (quizData.length - 1)){
+         
+          currentQuestion++;
+          loadQuiz()
+     }
+     else{
                console.log("Total Score: "  + score + '/' + quizData.length)
           } 
+
+           
+          
+          
            
      }
 )
