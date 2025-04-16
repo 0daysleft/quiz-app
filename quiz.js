@@ -170,6 +170,7 @@ const submitBtn = document.querySelector('button');
 
 let currentQuestion = 0;
 
+loadQuiz();
 
 function loadQuiz(){
 
@@ -185,13 +186,13 @@ function loadQuiz(){
      
 }
 
-// let ans = document.querySelector('li');
+let ans = document.querySelector('li');
 
-// ans.addEventListener('click', 
-//      () => {
-//           console.log(ans)
-//      }
-// )
+ans.addEventListener('click', 
+     () => {
+          
+     }
+)
 
 submitBtn.addEventListener('click', 
      () => {
