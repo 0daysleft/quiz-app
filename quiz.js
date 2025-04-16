@@ -63,6 +63,7 @@ const quizData = [
         d: "--",
         correct: 'a'
     },
+    /*
     {
         question: "Which array method removes the last element from an array?",
         a: "shift()",
@@ -159,7 +160,7 @@ const quizData = [
         d: "object",
         correct: 'c'
     }
-
+*/
 ];
 
 const radioBtn = document.querySelectorAll('input');
@@ -231,9 +232,33 @@ function showResults(){
           let userScore = document.getElementsByClassName("actual-score")[0]
           let totalscore = (score * (100 / quizData.length));
 
-          if(totalscore >= '80'){
-               congrats.textContent = "Exellent"
-               overalPeopelpPrcentage.textContent = '87%'
+          if(totalscore >= '90'){
+               congrats.textContent = "Super Excellent"
+               overalPeopelpPrcentage.textContent = '92.5%'
+          }
+          else if(totalscore >= '80'){
+               congrats.textContent = "Excellent"
+               overalPeopelpPrcentage.textContent = '84%'
+          }
+          else if(totalscore >= '70'){
+               congrats.textContent = "Very Good"
+               overalPeopelpPrcentage.textContent = '73.20%'
+          }
+          else if(totalscore >= '55'){
+               congrats.textContent = "Good Job"
+               overalPeopelpPrcentage.textContent = '58.43%'
+          }
+          else if(totalscore >= '40'){
+               congrats.textContent = "Better Than Poor"
+               overalPeopelpPrcentage.textContent = '34%'
+          }
+          else if(totalscore >= '30'){
+               congrats.textContent = "Poor"
+               overalPeopelpPrcentage.textContent = '21.32%'
+          }
+          else if(totalscore >= '0'){
+               congrats.textContent = "Very Poor"
+               overalPeopelpPrcentage.textContent = '4.2%'
           }
 
           quizContainer.style.display = "none"
