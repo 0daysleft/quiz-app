@@ -209,10 +209,8 @@ submitBtn.addEventListener('click',
                                    quizNumber.innerHTML = ((currentQuestion + 1) + '/' + (quizData.length + 1));
                                    if(radio.checked){
                                         radio.id === currentQuizData.correct ? score++ : score
-                                             console.log('Your Choice: ' + radio.id + "\nCorrect Answer: " + currentQuizData.correct)
-                                             console.log('Quiz: ' + currentQuizData.question + "\nAns: " + currentQuizData.correct + "==> " + currentQuizData[currentQuizData.correct])
-                                             loadQuiz()
-                                             currentQuestion++;
+                                        loadQuiz()
+                                        currentQuestion++;
                                         }
                                         
                                    }              
