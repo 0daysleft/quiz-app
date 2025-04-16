@@ -185,11 +185,26 @@ function loadQuiz(){
      
 }
 
+// let ans = document.querySelector('li');
+
+// ans.addEventListener('click', 
+//      () => {
+//           console.log(ans)
+//      }
+// )
+
 submitBtn.addEventListener('click', 
      () => {
-          
+
           currentQuestion++;
-          loadQuiz();
+
+          if(currentQuestion <= quizData.length){
+
+               loadQuiz();
+          }
+          else{
+               alert("Done")
+          }
      }
 )
 
