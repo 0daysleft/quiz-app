@@ -64,7 +64,6 @@ button:hover{
 /* RESULTS SECTION */
 
 .score-container{
-     min-width: 500px;
      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
      height: 600px;
      text-align: center;
@@ -84,4 +83,15 @@ button:hover{
      flex-direction: column;
      background-color: red;
      border-radius: 100%;
+}
+
+.total-score .actual-score{
+     font-size: 7rem;
+     font-weight: bolder;
+}
+
+.total-score .out-of{
+     font-size: 2.5rem;
+     font-weight: bolder;
+     margin-bottom: 2rem;
 }
