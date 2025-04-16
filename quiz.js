@@ -38,8 +38,7 @@ const quizData = [
         c: "const",
         d: "static",
         correct: 'c'
-    }
-    /*,
+    },
     {
         question: "Which of the following is a JavaScript data type?",
         a: "Float",
@@ -160,7 +159,7 @@ const quizData = [
         d: "object",
         correct: 'c'
     }
-        */
+
 ];
 
 const radioBtn = document.querySelectorAll('input');
