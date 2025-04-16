@@ -41,6 +41,10 @@ ul li{
      margin: 1rem 0;
 }
 
+ul li label, input{
+     cursor: pointer;
+}
+
 button{
      background-color: #8e44ad;
      display: block;
