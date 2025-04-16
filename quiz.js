@@ -166,10 +166,10 @@ const a_text = document.getElementById("a_text")
 const b_text = document.getElementById("b_text")
 const c_text = document.getElementById("c_text")
 const d_text = document.getElementById("d_text")
+const submitBtn = document.querySelector('button');
 
 let currentQuestion = 0;
 
-loadQuiz();
 
 function loadQuiz(){
 
@@ -182,7 +182,14 @@ function loadQuiz(){
      c_text.innerText = currentQuizData.c;
      d_text.innerText = currentQuizData.d;
 
-     currentQuestion++;
+     
 }
 
+submitBtn.addEventListener('click', 
+     () => {
+          
+          currentQuestion++;
+          loadQuiz();
+     }
+)
 
