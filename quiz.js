@@ -211,7 +211,7 @@ submitBtn.addEventListener('click',
 
           radioBtn.forEach(
                     (radio) => {
-                         console.log(radio.checked ? true +"Radio Id: " + radio.id : "")
+                        // console.log(radio.checked ? true +"Radio Id: " + radio.id : "")
 
                          if(!radio.checked) return
                          else{ 
@@ -219,10 +219,12 @@ submitBtn.addEventListener('click',
                                         let quizNumber = document.getElementById('quizNumber');
                                         quizNumber.innerHTML = currentQuestion;
 
-                                        
+                                        if(radio.checked.id === currentQuizData.correct){
+                                             score++
+                                        }
                                    }
                                    else{
-                                        alert("Done")
+                                        console.log("Total Score: "  + score)
                                    }  
                               loadQuiz()
                          }
